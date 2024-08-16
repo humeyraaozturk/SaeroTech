@@ -1,0 +1,5 @@
+python -m PyQt5.uic.pyuic -x arayuz.ui -o arayuz_python.py
+python -m PyQt5.uic.pyuic -x Harita.ui -o Harita_python.py
+python -m PyQt5.uic.pyuic -x ayarlar.ui -o ayarlar.py
+sim_vehicle.py -v ArduPlane --model JSON --add-param-file=$HOME/SITL_Models/Gazebo/config/alti_transition_quad.param 
+gz sim -v4 -r alti_transition_runway.sdf

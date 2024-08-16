@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Ayarlar</class>
+ <widget class="QWidget" name="Ayarlar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>493</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Ayarlar</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: rgb(20, 24, 36)</string>
+  </property>
+  <widget class="QFrame" name="frame_5">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>471</width>
+     <height>461</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>60</y>
+      <width>201</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="kose1lat">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+background-color: white; /* Arkaplan rengi */
+border: 4px solid #ccc; /* Kenarlık */
+border-radius: 4px; /* Kenar yarıçapı */
+padding: 1px 18px 1px 3px; /* İç boşluk */
+border-radius: 10%;
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Latitude 1</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="kose1lon">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>59</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+background-color: white; /* Arkaplan rengi */
+border: 4px solid #ccc; /* Kenarlık */
+border-radius: 4px; /* Kenar yarıçapı */
+padding: 1px 18px 1px 3px; /* İç boşluk */
+border-radius: 10%;
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Longitude 1</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>180</y>
+      <width>201</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="kose3lat">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+background-color: white; /* Arkaplan rengi */
+border: 4px solid #ccc; /* Kenarlık */
+border-radius: 4px; /* Kenar yarıçapı */
+padding: 1px 18px 1px 3px; /* İç boşluk */
+border-radius: 10%;
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Latitude 3</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="kose3lon">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+background-color: white; /* Arkaplan rengi */
+border: 4px solid #ccc; /* Kenarlık */
+border-radius: 4px; /* Kenar yarıçapı */
+padding: 1px 18px 1px 3px; /* İç boşluk */
+border-radius: 10%;
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Longitude 3</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>10</y>
+      <width>331</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Uçuş Alanının Köşe Koordinatları</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnKaydet">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>350</y>
+      <width>191</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #4CAF50; /* Arkaplan rengi */
+    border: none; /* Kenarlık yok */
+    color: white; /* Metin rengi */
+    padding: 15px 32px; /* Düğme içeriği arasındaki boşluk */
+    text-align: center; /* Metni merkezle */
+    text-decoration: none; /* Altçizgiyi kaldır */
+    font-size: 16px; /* Metin boyutu */
+    margin: 4px 2px; /* Düğme arasındaki boşluk */
+    border-radius: 8px; /* Kenar yarıçapı */
+	font: 75 16pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+    background-color: #45a049; /* Fare üzerine gelindiğinde arkaplan rengi */
+    color: white; /* Fare üzerine gelindiğinde metin rengi */
+}</string>
+    </property>
+    <property name="text">
+     <string>Kaydet</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>60</y>
+      <width>201</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="kose2lat">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+background-color: white; /* Arkaplan rengi */
+border: 4px solid #ccc; /* Kenarlık */
+border-radius: 4px; /* Kenar yarıçapı */
+padding: 1px 18px 1px 3px; /* İç boşluk */
+border-radius: 10%;
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Latitude 2</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="kose2lon">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>59</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+background-color: white; /* Arkaplan rengi */
+border: 4px solid #ccc; /* Kenarlık */
+border-radius: 4px; /* Kenar yarıçapı */
+padding: 1px 18px 1px 3px; /* İç boşluk */
+border-radius: 10%;
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Longitude 2</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_4">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>180</y>
+      <width>201</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="kose4lat">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+background-color: white; /* Arkaplan rengi */
+border: 4px solid #ccc; /* Kenarlık */
+border-radius: 4px; /* Kenar yarıçapı */
+padding: 1px 18px 1px 3px; /* İç boşluk */
+border-radius: 10%;
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Latitude 4</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="kose4lon">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>59</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+background-color: white; /* Arkaplan rengi */
+border: 4px solid #ccc; /* Kenarlık */
+border-radius: 4px; /* Kenar yarıçapı */
+padding: 1px 18px 1px 3px; /* İç boşluk */
+border-radius: 10%;
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Longitude 4</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLineEdit" name="altitude">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>300</y>
+      <width>381</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: white; /* Arkaplan rengi */
+border: 4px solid #ccc; /* Kenarlık */
+border-radius: 4px; /* Kenar yarıçapı */
+padding: 1px 18px 1px 3px; /* İç boşluk */
+border-radius: 10%;
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="placeholderText">
+     <string>Uçuş Yüksekliği</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnVarsaylan">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>350</y>
+      <width>191</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #4CAF50; /* Arkaplan rengi */
+    border: none; /* Kenarlık yok */
+    color: white; /* Metin rengi */
+    padding: 15px 32px; /* Düğme içeriği arasındaki boşluk */
+    text-align: center; /* Metni merkezle */
+    text-decoration: none; /* Altçizgiyi kaldır */
+    font-size: 16px; /* Metin boyutu */
+    margin: 4px 2px; /* Düğme arasındaki boşluk */
+    border-radius: 8px; /* Kenar yarıçapı */
+	font: 75 16pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+    background-color: #45a049; /* Fare üzerine gelindiğinde arkaplan rengi */
+    color: white; /* Fare üzerine gelindiğinde metin rengi */
+}</string>
+    </property>
+    <property name="text">
+     <string>Varsayılan</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

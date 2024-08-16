@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <title>CesiumJS 3D Tiles Rotating Drone View Demo</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/cesiumjs/1.105/Build/Cesium/Cesium.js"></script>
+  <link href="https://ajax.googleapis.com/ajax/libs/cesiumjs/1.105/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://bucketcss.netlify.app/css/bucket-minify.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .map-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+    
+    #cesiumContainer {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .button-container {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .gas-button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .gas-button.eco2 {
+      background-color: #607D8B;
+    }
+
+    .gas-button:hover {
+      background-color: #45a049;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="map-container">
+    <div id="cesiumContainer" class="cesiumContainer"></div>
+    <div class="button-container">
+      <button class="gas-button" data-filename="CO.csv">CO</button>
+      <button class="gas-button" data-filename="C2H5OH.csv">C2H5OH</button>
+      <button class="gas-button" data-filename="H2.csv">H2</button>
+      <button class="gas-button" data-filename="NO2.csv">NO2</button>
+      <button class="gas-button" data-filename="NH3.csv">NH3</button>
+      <button class="gas-button" data-filename="H2S.csv">H2S</button>
+      <button class="gas-button" data-filename="CH4.csv">CH4</button>
+      <button class="gas-button" data-filename="SO2.csv">SO2</button>
+      <button class="gas-button" data-filename="pm2.5.csv">pm2.5</button>
+      <button class="gas-button eco2" data-filename="eCO2.csv">eCO2</button>
+      <button class="flight-button" id="startFlight">Uçuş</button>
+    </div>
+  </div>
+  <script>
+    Cesium.RequestScheduler.requestsByServer["tile.googleapis.com:443"] = 18;
+
+    const viewer = new Cesium.Viewer("cesiumContainer", {
+      imageryProvider: false,
+      baseLayerPicker: false,
+      requestRenderMode: true,
+      geocoder: false,
+      globe: false,
+      infoBox: false,
+    });
+
+    const tileset = new Cesium.Cesium3DTileset({
+      url: "https://tile.googleapis.com/v1/3dtiles/root.json?key=AIzaSyDh8GxCTSwyDJUGYKcgiNS_bPxQ7z77Po4",
+      showCreditsOnScreen: true,
+    });
+    viewer.scene.primitives.add(tileset);
+
+    function zoomToViewport(viewport) {
+      viewer.entities.add({
+        polyline: {
+          positions: Cesium.Cartesian3.fromDegreesArray([
+            viewport.getNorthEast().lng(), viewport.getNorthEast().lat(),
+            viewport.getSouthWest().lng(), viewport.getNorthEast().lat(),
+            viewport.getSouthWest().lng(), viewport.getSouthWest().lat(),
+            viewport.getNorthEast().lng(), viewport.getSouthWest().lat(),
+            viewport.getNorthEast().lng(), viewport.getNorthEast().lat(),
+          ]),
+          width: 10,
+          clampToGround: true,
+          material: Cesium.Color.RED,
+        },
+      });
+      viewer.flyTo(viewer.entities);
+    }
+
+    function initAutocomplete() {
+      const autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById("pacViewPlace"),
+        {
+          fields: [
+            "geometry",
+            "name",
+          ],
+        }
+      );
+      autocomplete.addListener("place_changed", () => {
+        viewer.entities.removeAll();
+        const place = autocomplete.getPlace();
+        if (!place.geometry || !place.geometry.viewport) {
+          window.alert("Girdi için görüntü yok: " + place.name);
+          return;
+        }
+        zoomToViewport(place.geometry.viewport);
+      });
+    }
+  </script>
+  <script src="bulut.js"></script>
+  <script src="ucus.js"></script>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDh8GxCTSwyDJUGYKcgiNS_bPxQ7z77Po4&libraries=places&callback=initAutocomplete"></script>
+</body>
+</html>
